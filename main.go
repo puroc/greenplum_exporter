@@ -1,11 +1,11 @@
 package main
 
 import (
-	"greenplum-exporter/collector"
 	"github.com/prometheus/client_golang/prometheus"
-	logger "github.com/prometheus/common/log"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	logger "github.com/prometheus/common/log"
 	"gopkg.in/alecthomas/kingpin.v2"
+	"greenplum-exporter/collector"
 	"net/http"
 )
 
@@ -22,20 +22,20 @@ var (
 )
 
 var scrapers = map[collector.Scraper]bool{
-	//collector.NewLocksScraper():         true,
-	//collector.NewClusterStateScraper():  true,
-	//collector.NewDatabaseSizeScraper():  true,
-	//collector.NewConnectionsScraper():   true,
-	//collector.NewMaxConnScraper():       true,
-	//collector.NewSegmentScraper():       true,
-	//collector.NewConnDetailScraper():    true,
-	//collector.NewUsersScraper():         true,
-	//collector.NewBgWriterStateScraper(): true,
-	//
-	//collector.NewSystemScraper():        false,
-	//collector.NewQueryScraper():         false,
-	//collector.NewDynamicMemoryScraper(): false,
-	//collector.NewDiskScraper():          false,
+	collector.NewLocksScraper():         true,
+	collector.NewClusterStateScraper():  true,
+	collector.NewDatabaseSizeScraper():  true,
+	collector.NewConnectionsScraper():   true,
+	collector.NewMaxConnScraper():       true,
+	collector.NewSegmentScraper():       true,
+	collector.NewConnDetailScraper():    true,
+	collector.NewUsersScraper():         true,
+	collector.NewBgWriterStateScraper(): true,
+
+	collector.NewSystemScraper():        false,
+	collector.NewQueryScraper():         false,
+	collector.NewDynamicMemoryScraper(): false,
+	collector.NewDiskScraper():          false,
 	collector.NewTestScraper():          true,
 }
 
