@@ -32,13 +32,15 @@ var scrapers = map[collector.Scraper]bool{
 	collector.NewUsersScraper():         true,
 	collector.NewBgWriterStateScraper(): true,
 
-	collector.NewSystemScraper():         false,
-	collector.NewQueryScraper():          false,
-	collector.NewDynamicMemoryScraper():  false,
-	collector.NewDiskScraper():           false,
-	collector.NewTableIndexDiskScraper(): true,
-	collector.NewTableSkewScraper():      true,
-	collector.NewSlowQueryScraper():      true,
+	collector.NewSystemScraper():           false,
+	collector.NewQueryScraper():            false,
+	collector.NewDynamicMemoryScraper():    false,
+	collector.NewDiskScraper():             false,
+	collector.NewTableIndexDiskScraper():   true,
+	collector.NewTableSkewScraper():        true,
+	collector.NewSlowQueryScraper():        true,
+	collector.NewTableNeedAnalyzeScraper(): true,
+	collector.NewTableBloatScraper():       true,
 }
 
 var gathers prometheus.Gatherers
