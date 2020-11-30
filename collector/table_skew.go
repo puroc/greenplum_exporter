@@ -11,7 +11,7 @@ import (
  */
 
 const (
-	tableSkewSql = `select sifnamespace,sifrelname,siffraction from gp_toolkit.gp_skew_idle_fractions`
+	tableSkewSql = `select sifnamespace,sifrelname,siffraction from gp_toolkit.gp_skew_idle_fractions order by siffraction desc`
 )
 
 var (
