@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 16,
-  "iteration": 1595654851189,
+  "id": 1,
+  "iteration": 1606729546076,
   "links": [],
   "panels": [
     {
@@ -52,6 +52,9 @@
       },
       "id": 8,
       "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -60,10 +63,9 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.5",
+      "pluginVersion": "7.3.3",
       "repeat": null,
       "targets": [
         {
@@ -76,7 +78,7 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "运行时间",
-      "type": "gauge"
+      "type": "stat"
     },
     {
       "datasource": "Prometheus",
@@ -128,6 +130,9 @@
       },
       "id": 38,
       "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -136,10 +141,9 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.5",
+      "pluginVersion": "7.3.3",
       "targets": [
         {
           "expr": "greenplum_up",
@@ -151,7 +155,7 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Master可达",
-      "type": "gauge"
+      "type": "stat"
     },
     {
       "datasource": "Prometheus",
@@ -167,6 +171,15 @@
               "to": "",
               "type": 1,
               "value": "1"
+            },
+            {
+              "from": "",
+              "id": 1,
+              "operator": "",
+              "text": "否",
+              "to": "",
+              "type": 1,
+              "value": "0"
             }
           ],
           "thresholds": {
@@ -193,6 +206,9 @@
       },
       "id": 40,
       "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -201,10 +217,9 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.5",
+      "pluginVersion": "7.3.3",
       "targets": [
         {
           "expr": "greenplum_cluster_sync",
@@ -216,52 +231,7 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Standby同步",
-      "type": "gauge"
-    },
-    {
-      "content": "<font size=10><center>$version</center></font>\n\n\n",
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 2,
-        "x": 10,
-        "y": 0
-      },
-      "id": 18,
-      "mode": "html",
-      "pluginVersion": "7.0.5",
-      "targets": [
-        {
-          "expr": "greenplum_cluster_state",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "版本号",
-      "type": "text"
+      "type": "stat"
     },
     {
       "datasource": "Prometheus",
@@ -287,9 +257,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 4,
         "w": 2,
-        "x": 12,
+        "x": 10,
         "y": 0
       },
       "id": 36,
@@ -304,9 +274,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.5",
+      "pluginVersion": "7.3.3",
       "targets": [
         {
           "expr": "greenplum_cluster_total_connections",
@@ -325,7 +296,10 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
           "decimals": 2,
           "mappings": [],
           "thresholds": {
@@ -342,16 +316,16 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
-        "w": 10,
-        "x": 14,
+        "h": 8,
+        "w": 12,
+        "x": 12,
         "y": 0
       },
       "id": 4,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
-        "justifyMode": "auto",
+        "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -359,9 +333,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "value_and_name"
       },
-      "pluginVersion": "7.0.5",
+      "pluginVersion": "7.3.3",
       "targets": [
         {
           "expr": "greenplum_node_segment_disk_free_mb_size",
@@ -374,7 +349,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "当前Segment剩余存储空间",
+      "title": "数据节点剩余存储空间",
       "type": "stat"
     },
     {
@@ -396,21 +371,21 @@
               }
             ]
           },
-          "unit": "dateTimeAsIso"
+          "unit": "short"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 4,
-        "w": 3,
+        "w": 2,
         "x": 0,
         "y": 4
       },
-      "id": 28,
+      "id": 14,
       "options": {
         "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "center",
+        "graphMode": "none",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -418,24 +393,23 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.5",
+      "pluginVersion": "7.3.3",
       "targets": [
         {
-          "expr": "greenplum_cluster_config_last_load_time_seconds*1000",
+          "expr": "greenplum_server_users_total_count",
           "format": "time_series",
           "instant": true,
           "interval": "",
-          "intervalFactor": 1,
           "legendFormat": "",
           "refId": "A"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "配置加载时间",
-      "transformations": [],
+      "title": "账号总数",
       "type": "stat"
     },
     {
@@ -463,13 +437,13 @@
       "gridPos": {
         "h": 4,
         "w": 2,
-        "x": 3,
+        "x": 2,
         "y": 4
       },
       "id": 20,
       "options": {
         "colorMode": "value",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
@@ -478,9 +452,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.5",
+      "pluginVersion": "7.3.3",
       "targets": [
         {
           "expr": "greenplum_cluster_total_online_user_count",
@@ -520,7 +495,7 @@
       "gridPos": {
         "h": 4,
         "w": 2,
-        "x": 5,
+        "x": 4,
         "y": 4
       },
       "id": 16,
@@ -535,9 +510,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.5",
+      "pluginVersion": "7.3.3",
       "targets": [
         {
           "expr": "greenplum_cluster_total_client_count",
@@ -553,35 +529,44 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+      "datasource": null,
       "fieldConfig": {
         "defaults": {
           "custom": {},
+          "decimals": 2,
           "mappings": [],
           "thresholds": {
-            "mode": "absolute",
+            "mode": "percentage",
             "steps": [
               {
-                "color": "green",
+                "color": "blue",
                 "value": null
               },
               {
                 "color": "red",
-                "value": 80
+                "value": 90
+              },
+              {
+                "color": "#EAB839",
+                "value": 95
+              },
+              {
+                "color": "green",
+                "value": 98
               }
             ]
           },
-          "unit": "short"
+          "unit": "percent"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 4,
-        "w": 2,
-        "x": 7,
+        "w": 3,
+        "x": 6,
         "y": 4
       },
-      "id": 14,
+      "id": 50,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -593,14 +578,13 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.5",
+      "pluginVersion": "7.3.3",
       "targets": [
         {
-          "expr": "greenplum_server_users_total_count",
-          "format": "time_series",
-          "instant": true,
+          "expr": "greenplum_server_database_transition_commit_percent_rate",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -608,7 +592,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "账号总数",
+      "title": "事务提交率",
       "type": "stat"
     },
     {
@@ -622,12 +606,20 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "blue",
                 "value": null
               },
               {
                 "color": "red",
-                "value": 100
+                "value": 90
+              },
+              {
+                "color": "#EAB839",
+                "value": 95
+              },
+              {
+                "color": "green",
+                "value": 98
               }
             ]
           },
@@ -653,38 +645,382 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.5",
+      "pluginVersion": "7.3.3",
       "targets": [
         {
           "expr": "greenplum_server_database_hit_cache_percent_rate",
           "interval": "",
-          "legendFormat": "缓存命中率",
+          "legendFormat": "",
           "refId": "A"
-        },
-        {
-          "expr": "greenplum_server_database_transition_commit_percent_rate",
-          "interval": "",
-          "legendFormat": "事务提交率",
-          "refId": "B"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
+      "title": "缓存命中率",
       "type": "stat"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
+      "cacheTimeout": null,
       "datasource": "Prometheus",
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "custom": {
-            "align": null
+            "align": "center",
+            "displayMode": "color-text",
+            "filterable": false
+          },
+          "mappings": [
+            {
+              "from": "",
+              "id": 3,
+              "text": "数据节点",
+              "to": "",
+              "type": 1,
+              "value": "p"
+            },
+            {
+              "from": "",
+              "id": 4,
+              "text": "镜像节点",
+              "to": "",
+              "type": 1,
+              "value": "m"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "启停状态"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "blue",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 0
+                    },
+                    {
+                      "color": "green",
+                      "value": 1
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "from": "",
+                    "id": 1,
+                    "text": "DOWN",
+                    "to": "",
+                    "type": 1,
+                    "value": "0"
+                  },
+                  {
+                    "from": "",
+                    "id": 2,
+                    "text": "UP",
+                    "to": "",
+                    "type": 1,
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "color-background"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "id": 24,
+      "interval": "",
+      "links": [],
+      "options": {
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "port"
+          }
+        ]
+      },
+      "pluginVersion": "7.3.3",
+      "repeat": null,
+      "targets": [
+        {
+          "expr": "greenplum_node_segment_status",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Segment实例在线状态",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "hostname",
+                "port",
+                "preferred_role",
+                "Value"
+              ]
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "Value": "启停状态",
+              "hostname": "主机名",
+              "port": "端口",
+              "preferred_role": "角色"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "center",
+            "displayMode": "color-text",
+            "filterable": false
+          },
+          "mappings": [
+            {
+              "from": "",
+              "id": 0,
+              "operator": "",
+              "text": "synchronized",
+              "to": "",
+              "type": 1,
+              "value": "1"
+            },
+            {
+              "from": "",
+              "id": 1,
+              "operator": "",
+              "text": "resyncing",
+              "to": "",
+              "type": 1,
+              "value": "2"
+            },
+            {
+              "from": "",
+              "id": 2,
+              "operator": "",
+              "text": "change logging",
+              "to": "",
+              "type": 1,
+              "value": "3"
+            },
+            {
+              "from": "",
+              "id": 3,
+              "operator": "",
+              "text": "not synchronized",
+              "to": "",
+              "type": 1,
+              "value": "4"
+            },
+            {
+              "from": "",
+              "id": 4,
+              "text": "数据节点",
+              "to": "",
+              "type": 1,
+              "value": "p"
+            },
+            {
+              "from": "",
+              "id": 5,
+              "text": "镜像节点",
+              "to": "",
+              "type": 1,
+              "value": "m"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "同步状态"
+            },
+            "properties": [
+              {
+                "id": "custom.displayMode",
+                "value": "color-background"
+              },
+              {
+                "id": "color"
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "blue",
+                      "value": null
+                    },
+                    {
+                      "color": "green",
+                      "value": 1
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 2
+                    },
+                    {
+                      "color": "#6ED0E0",
+                      "value": 3
+                    },
+                    {
+                      "color": "red",
+                      "value": 4
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 26,
+      "options": {
+        "showHeader": true
+      },
+      "pluginVersion": "7.3.3",
+      "repeat": null,
+      "targets": [
+        {
+          "expr": "greenplum_node_segment_mode",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 10,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Segment实例同步模式",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "hostname",
+                "port",
+                "preferred_role",
+                "Value"
+              ]
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {
+              "Value": 4,
+              "dbid": 2,
+              "hostname": 0,
+              "port": 1,
+              "preferred_role": 3
+            },
+            "renameByName": {
+              "Value": "同步状态",
+              "dbid": "数据库ID",
+              "hostname": "主机",
+              "port": "端口",
+              "preferred_role": "角色"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "filterable": false
           },
           "mappings": [],
           "thresholds": {
@@ -701,95 +1037,259 @@
             ]
           }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "占用空间"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "decmbytes"
+              },
+              {
+                "id": "custom.width",
+                "value": 319
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "表数量"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 92
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "数据库"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 282
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 6
+        "h": 8,
+        "w": 7,
+        "x": 0,
+        "y": 17
       },
-      "hiddenSeries": false,
-      "id": 10,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "hideEmpty": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sideWidth": null,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
+      "id": 52,
       "options": {
-        "dataLinks": []
+        "showHeader": true,
+        "sortBy": []
       },
-      "percentage": false,
-      "pluginVersion": "7.0.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "7.3.3",
       "targets": [
         {
-          "expr": "greenplum_cluster_active_connections_per_client{client!=\"\"}",
+          "expr": "greenplum_node_database_table_total_count",
+          "format": "table",
           "interval": "",
-          "legendFormat": "{{client}}",
+          "legendFormat": "",
           "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "客户端连接数统计图",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "short",
-          "label": "连接个数",
-          "logBase": 1,
-          "max": "80",
-          "min": null,
-          "show": true
         },
         {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
+          "expr": "greenplum_node_database_name_mb_size",
+          "format": "table",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
         }
       ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "数据库占用空间和表数量",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "dbname",
+                "Value #A",
+                "Value #B"
+              ]
+            }
+          }
+        },
+        {
+          "id": "seriesToColumns",
+          "options": {
+            "byField": "dbname"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "Value #A": "表数量",
+              "Value #B": "占用空间",
+              "dbname": "数据库"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "表占用空间"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "decbytes"
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "lcd-gauge"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "索引占用空间"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "decbytes"
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "lcd-gauge"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "schema"
+            },
+            "properties": [
+              {
+                "id": "custom.filterable",
+                "value": true
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 17,
+        "x": 7,
+        "y": 17
+      },
+      "id": 48,
+      "options": {
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "表占用空间"
+          }
+        ]
+      },
+      "pluginVersion": "7.3.3",
+      "targets": [
+        {
+          "expr": "greenplum_cluster_table_size",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "expr": "greenplum_cluster_index_size",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "表和索引占用磁盘空间",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "schema",
+                "table",
+                "Value #B",
+                "Value #A"
+              ]
+            }
+          }
+        },
+        {
+          "id": "seriesToColumns",
+          "options": {
+            "byField": "table"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "schema 2": true
+            },
+            "indexByName": {},
+            "renameByName": {
+              "Value #A": "表占用空间",
+              "Value #B": "索引占用空间",
+              "schema 1": "schema",
+              "table": "table"
+            }
+          }
+        }
+      ],
+      "type": "table"
     },
     {
       "aliasColors": {},
@@ -801,36 +1301,40 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 12,
         "x": 0,
-        "y": 8
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 6,
       "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.3.3",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -841,16 +1345,23 @@
       "targets": [
         {
           "expr": "greenplum_cluster_active_connections",
+          "hide": false,
           "interval": "",
           "legendFormat": "{{job}}",
           "refId": "A"
+        },
+        {
+          "expr": "greenplum_cluster_active_connections_per_user",
+          "interval": "",
+          "legendFormat": "{{usename}}",
+          "refId": "B"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "活动连接数折线历史图",
+      "title": "活动连接数",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -896,119 +1407,10 @@
       "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 2,
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 15
-      },
-      "hiddenSeries": false,
-      "id": 12,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 5,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pluginVersion": "7.0.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "greenplum_cluster_active_connections_per_user",
-          "interval": "",
-          "legendFormat": "{{usename}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "在线账号连接数分析图",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": "连接数",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
+          "custom": {
+            "align": null
+          },
+          "links": [],
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -1029,32 +1431,34 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 12,
-        "x": 0,
-        "y": 16
+        "x": 12,
+        "y": 25
       },
       "hiddenSeries": false,
-      "id": 42,
+      "id": 10,
       "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": false,
+        "max": true,
+        "min": true,
         "rightSide": true,
         "show": true,
+        "sideWidth": null,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
-      "linewidth": 3,
+      "linewidth": 1,
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.0.5",
+      "pluginVersion": "7.3.3",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1064,9 +1468,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "greenplum_node_database_table_total_count",
+          "expr": "greenplum_cluster_active_connections_per_client{client!=\"\"}",
           "interval": "",
-          "legendFormat": "{{dbname}}",
+          "legendFormat": "{{client}}",
           "refId": "A"
         }
       ],
@@ -1074,7 +1478,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "各数据库内表的总数目",
+      "title": "客户端连接数",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1090,8 +1494,9 @@
       },
       "yaxes": [
         {
+          "decimals": null,
           "format": "short",
-          "label": null,
+          "label": "连接个数",
           "logBase": 1,
           "max": null,
           "min": null,
@@ -1103,7 +1508,7 @@
           "logBase": 1,
           "max": null,
           "min": null,
-          "show": true
+          "show": false
         }
       ],
       "yaxis": {
@@ -1112,148 +1517,14 @@
       }
     },
     {
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 5000
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 0,
-        "y": 24
-      },
-      "id": 44,
-      "options": {
-        "displayMode": "lcd",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showUnfilled": true
-      },
-      "pluginVersion": "7.0.5",
-      "targets": [
-        {
-          "expr": "greenplum_node_database_table_total_count",
-          "instant": true,
-          "interval": "",
-          "legendFormat": "{{dbname}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "当前各库内表总数目",
-      "type": "bargauge"
-    },
-    {
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 8000
-              }
-            ]
-          },
-          "unit": "decmbytes"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 24
-      },
-      "id": 2,
-      "options": {
-        "displayMode": "gradient",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showUnfilled": false
-      },
-      "pluginVersion": "7.0.5",
-      "targets": [
-        {
-          "expr": "greenplum_node_database_name_mb_size",
-          "instant": true,
-          "interval": "",
-          "legendFormat": "{{dbname}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "各库存储空间统计图",
-      "type": "bargauge"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
-      "description": "",
+      "datasource": null,
       "fieldConfig": {
         "defaults": {
           "custom": {
-            "align": "center",
-            "displayMode": "color-text"
+            "align": null,
+            "filterable": false
           },
-          "mappings": [
-            {
-              "from": "",
-              "id": 0,
-              "operator": "",
-              "text": "DOWN",
-              "to": "",
-              "type": 1,
-              "value": "0"
-            },
-            {
-              "from": "",
-              "id": 1,
-              "operator": "",
-              "text": "UP",
-              "to": "",
-              "type": 1,
-              "value": "1"
-            }
-          ],
+          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1268,51 +1539,98 @@
             ]
           }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "倾斜程度"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "percentage",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 10
+                    },
+                    {
+                      "color": "red",
+                      "value": 30
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "color"
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "color-background"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "schema"
+            },
+            "properties": [
+              {
+                "id": "custom.filterable",
+                "value": true
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
-        "h": 13,
+        "h": 8,
         "w": 12,
         "x": 0,
-        "y": 33
+        "y": 34
       },
-      "id": 24,
-      "interval": "",
-      "links": [],
+      "id": 54,
       "options": {
         "showHeader": true,
         "sortBy": [
           {
-            "desc": false,
-            "displayName": "port"
+            "desc": true,
+            "displayName": "倾斜程度"
           }
         ]
       },
-      "pluginVersion": "7.0.5",
-      "repeat": null,
+      "pluginVersion": "7.3.3",
       "targets": [
         {
-          "expr": "greenplum_node_segment_status",
+          "expr": "greenplum_cluster_table_skew",
           "format": "table",
           "instant": true,
           "interval": "",
-          "intervalFactor": 10,
           "legendFormat": "",
           "refId": "A"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Segment实例在线状态",
+      "title": "数据倾斜",
       "transformations": [
         {
           "id": "filterFieldsByName",
           "options": {
             "include": {
               "names": [
-                "hostname",
-                "port",
-                "preferred_role",
+                "schema",
+                "table",
                 "Value"
               ]
             }
@@ -1321,20 +1639,11 @@
         {
           "id": "organize",
           "options": {
-            "excludeByName": {
-              "hostname": false
-            },
-            "indexByName": {
-              "Value": 3,
-              "hostname": 0,
-              "port": 1,
-              "preferred_role": 2
-            },
+            "excludeByName": {},
+            "indexByName": {},
             "renameByName": {
-              "Value": "状态",
-              "hostname": "主机",
-              "port": "端口",
-              "preferred_role": "角色"
+              "Value": "倾斜程度",
+              "schema": ""
             }
           }
         }
@@ -1342,52 +1651,14 @@
       "type": "table"
     },
     {
-      "datasource": "Prometheus",
-      "description": "",
+      "datasource": null,
       "fieldConfig": {
         "defaults": {
           "custom": {
-            "align": "center",
-            "displayMode": "color-text"
+            "align": null,
+            "filterable": false
           },
-          "mappings": [
-            {
-              "from": "",
-              "id": 0,
-              "operator": "",
-              "text": "synchronized",
-              "to": "",
-              "type": 1,
-              "value": "1"
-            },
-            {
-              "from": "",
-              "id": 1,
-              "operator": "",
-              "text": "resyncing",
-              "to": "",
-              "type": 1,
-              "value": "2"
-            },
-            {
-              "from": "",
-              "id": 2,
-              "operator": "",
-              "text": "change logging",
-              "to": "",
-              "type": 1,
-              "value": "3"
-            },
-            {
-              "from": "",
-              "id": 3,
-              "operator": "",
-              "text": "not synchronized",
-              "to": "",
-              "type": 1,
-              "value": "4"
-            }
-          ],
+          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1402,43 +1673,96 @@
             ]
           }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "查询开始时间"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "dateTimeAsIso"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "耗时"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 1
+                    },
+                    {
+                      "color": "red",
+                      "value": 3
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "unit",
+                "value": "s"
+              },
+              {
+                "id": "color"
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "color-background"
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
-        "h": 13,
+        "h": 16,
         "w": 12,
         "x": 12,
-        "y": 33
+        "y": 34
       },
-      "id": 26,
+      "id": 56,
       "options": {
         "showHeader": true
       },
-      "pluginVersion": "7.0.5",
-      "repeat": null,
+      "pluginVersion": "7.3.3",
       "targets": [
         {
-          "expr": "greenplum_node_segment_mode",
+          "expr": "greenplum_cluster_slow_query",
           "format": "table",
           "instant": true,
           "interval": "",
-          "intervalFactor": 10,
           "legendFormat": "",
           "refId": "A"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Segment实例同步模式",
+      "title": "慢查询前10名",
       "transformations": [
         {
           "id": "filterFieldsByName",
           "options": {
             "include": {
               "names": [
-                "hostname",
-                "port",
-                "preferred_role",
+                "client",
+                "db",
+                "query_start",
+                "sql",
+                "state",
+                "user",
                 "Value"
               ]
             }
@@ -1449,19 +1773,159 @@
           "options": {
             "excludeByName": {},
             "indexByName": {
-              "Value": 4,
-              "dbid": 2,
-              "hostname": 0,
-              "port": 1,
-              "preferred_role": 3
+              "Value": 5,
+              "client": 2,
+              "db": 0,
+              "query_start": 4,
+              "sql": 6,
+              "state": 3,
+              "user": 1
             },
             "renameByName": {
-              "Value": "状态",
-              "dbid": "数据库ID",
-              "hostname": "主机",
-              "port": "端口",
-              "preferred_role": "角色"
+              "Value": "耗时",
+              "client": "客户端IP",
+              "db": "数据库",
+              "query_start": "查询开始时间",
+              "sql": "SQL语句",
+              "state": "状态",
+              "user": "用户"
             }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "schema"
+            },
+            "properties": [
+              {
+                "id": "custom.filterable",
+                "value": true
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 42
+      },
+      "id": 58,
+      "options": {
+        "showHeader": true
+      },
+      "pluginVersion": "7.3.3",
+      "targets": [
+        {
+          "expr": "greenplum_cluster_table_need_analyze",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "需要analyze的表",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "schema",
+                "table"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 50
+      },
+      "id": 60,
+      "options": {
+        "showHeader": true
+      },
+      "pluginVersion": "7.3.3",
+      "targets": [
+        {
+          "expr": "table_bloat",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "需要vacuum的表",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {}
           }
         }
       ],
@@ -1474,7 +1938,8 @@
         "defaults": {
           "custom": {
             "align": null,
-            "displayMode": "color-text"
+            "displayMode": "color-text",
+            "filterable": false
           },
           "mappings": [],
           "thresholds": {
@@ -1500,7 +1965,7 @@
             "properties": [
               {
                 "id": "custom.width",
-                "value": 361
+                "value": 1773
               }
             ]
           },
@@ -1539,21 +2004,69 @@
                 "value": 72
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "进程ID"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 69
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "锁类型"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 140
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "操作账号"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 118
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "连接状态"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 118
+              }
+            ]
           }
         ]
       },
       "gridPos": {
         "h": 8,
         "w": 12,
-        "x": 0,
-        "y": 46
+        "x": 12,
+        "y": 50
       },
       "id": 32,
       "options": {
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "7.0.5",
+      "pluginVersion": "7.3.3",
       "targets": [
         {
           "expr": "greenplum_server_locks_table_detail",
@@ -1590,7 +2103,16 @@
           "id": "organize",
           "options": {
             "excludeByName": {},
-            "indexByName": {},
+            "indexByName": {
+              "datname": 0,
+              "lock_satus": 1,
+              "locktype": 2,
+              "mode": 3,
+              "pid": 4,
+              "query": 7,
+              "state": 6,
+              "usename": 5
+            },
             "renameByName": {
               "Value": "开始时间",
               "application_name": "应用名称",
@@ -1607,106 +2129,10 @@
         }
       ],
       "type": "table"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 46
-      },
-      "hiddenSeries": false,
-      "id": 30,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sideWidth": null,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 5,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "rate(greenplum_node_database_name_mb_size[20m])",
-          "interval": "",
-          "legendFormat": "{{dbname}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "各库耗用存储速率",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
     }
   ],
-  "refresh": false,
-  "schemaVersion": 25,
+  "refresh": "10s",
+  "schemaVersion": 26,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -1715,11 +2141,12 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "6.6.0",
-          "value": "6.6.0"
+          "text": "6.11.1",
+          "value": "6.11.1"
         },
         "datasource": "Prometheus",
         "definition": "label_values(greenplum_cluster_state, version)",
+        "error": null,
         "hide": 2,
         "includeAll": false,
         "label": null,
@@ -1736,6 +2163,16 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "datasource": "Prometheus",
+        "error": null,
+        "filters": [],
+        "hide": 0,
+        "label": null,
+        "name": "Filters",
+        "skipUrlSync": false,
+        "type": "adhoc"
       }
     ]
   },
@@ -1759,5 +2196,5 @@
   "timezone": "",
   "title": "Greenplum集群监控状态图",
   "uid": "wsZrd9MMk",
-  "version": 238
+  "version": 18
 }
